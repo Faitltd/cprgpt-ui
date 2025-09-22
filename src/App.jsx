@@ -6,7 +6,7 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   const sendMessage = async () => {
-    const res = await fetch('/api/chat', {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/ask`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: input }),
